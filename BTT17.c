@@ -163,3 +163,31 @@ void Kruskal() {
     printf("Tong chi phi lam duong: %d\n", tong_chi_phi);
 }
 
+int main() {
+    n = 5; 
+
+    int data[5][5] = {
+        {0, 2, 0, 6, 0},
+        {2, 0, 3, 8, 5},
+        {0, 3, 0, 0, 7},
+        {6, 8, 0, 0, 9},
+        {0, 5, 7, 9, 0}
+    };
+
+    int i, j;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            ma_tran_ke[i][j] = data[i][j];
+        }
+    }
+
+    printf("=== HE THONG DO THI GIAO THONG ===\n");
+    
+    Dijkstra(0);
+
+    Prim();
+
+    Kruskal();
+
+    return 0;
+}
